@@ -1,0 +1,5 @@
+node_modules
+echo "SF-Pro.dmg"
+.env
+.env.local
+.env.production

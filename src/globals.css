@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  /* Brand colors (Kreo palette) */
+  --primary: #6C63FF;
+  /* main highlights, CTAs */
+  --secondary: #9A94FF;
+  /* hover states, accents */
+  --accent: #00E5FF;
+  /* special highlights */
+
+  /* Text */
+  --heading: #FFFFFF;
+  /* headings h1-h6 */
+  --text: #CFCFEA;
+  /* body / paragraph text */
+  --text-muted: #9B9BB8;
+  /* captions, helper text */
+
+  /* Backgrounds */
+  --bg-primary: #0B0D1C;
+  /* main page background */
+  --bg-secondary: #12152A;
+  /* cards, sections, navbar */
+
+  /* Glass / overlays */
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.15);
+
+  /* Borders */
+  --border: rgba(255, 255, 255, 0.12);
+
+  /* Existing tokens mapped to new palette for compatibility */
+  --background: var(--bg-primary);
+  --foreground: var(--text);
+  --card: var(--bg-secondary);
+  --card-foreground: var(--text);
+  --popover: var(--bg-secondary);
+  --popover-foreground: var(--text);
+  --primary-foreground: var(--heading);
+  --secondary-foreground: var(--heading);
+  --muted: var(--text-muted);
+  --muted-foreground: var(--text-muted);
+  --accent-foreground: #0B0D1C;
+
+  /* Replace red/destructive with brand primary (no red shades remain) */
+  --destructive: var(--primary);
+  --destructive-foreground: #FFFFFF;
+
+  --input: transparent;
+  --input-background: var(--bg-secondary);
+  --switch-background: rgba(154, 148, 255, 0.12);
+
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: var(--accent);
+
+  --chart-1: rgb(108 99 255 / 1);
+  --chart-2: rgb(154 148 255 / 1);
+  --chart-3: rgb(0 229 255 / 1);
+  --chart-4: rgb(108 99 255 / 1);
+  --chart-5: rgb(154 148 255 / 1);
+
+  --radius: 0.625rem;
+  --sidebar: var(--bg-secondary);
+  --sidebar-foreground: var(--text);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--heading);
+  --sidebar-accent: var(--secondary);
+  --sidebar-accent-foreground: var(--heading);
+  --sidebar-border: rgba(255, 255, 255, 0.06);
+  --sidebar-ring: var(--accent);
+}
+
+.dark {
+  /* Use same Kreo palette for dark mode to preserve design identity */
+  --primary: #6C63FF;
+  --secondary: #9A94FF;
+  --accent: #00E5FF;
+
+  --heading: #FFFFFF;
+  --text: #CFCFEA;
+  --text-muted: #9B9BB8;
+
+  --bg-primary: #0B0D1C;
+  --bg-secondary: #12152A;
+
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.15);
+
+  --background: var(--bg-primary);
+  --foreground: var(--text);
+  --card: var(--bg-secondary);
+  --card-foreground: var(--text);
+  --popover: var(--bg-secondary);
+  --popover-foreground: var(--text);
+
+  --primary-foreground: var(--heading);
+  --secondary-foreground: var(--heading);
+  --muted: var(--text-muted);
+  --muted-foreground: var(--text-muted);
+  --accent-foreground: #0B0D1C;
+
+  --destructive: var(--primary);
+  --destructive-foreground: #FFFFFF;
+
+  --border: rgba(255, 255, 255, 0.12);
+  --input: transparent;
+  --input-background: var(--bg-secondary);
+  --ring: var(--accent);
+
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+
+  --chart-1: rgb(108 99 255 / 1);
+  --chart-2: rgb(154 148 255 / 1);
+  --chart-3: rgb(0 229 255 / 1);
+  --chart-4: rgb(108 99 255 / 1);
+  --chart-5: rgb(154 148 255 / 1);
+
+  --radius: 0.625rem;
+  --sidebar: var(--bg-secondary);
+  --sidebar-foreground: var(--text);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--heading);
+  --sidebar-accent: var(--secondary);
+  --sidebar-accent-foreground: var(--heading);
+  --sidebar-border: rgba(255, 255, 255, 0.06);
+  --sidebar-ring: var(--accent);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: theme('fontFamily.sans');
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=' text-']), :not(:has([class^='text-'])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      /* 500-700 range */
+      line-height: 1.2;
+      font-family: theme('fontFamily.serif');
+      letter-spacing: -0.02em;
+      /* slightly tight */
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: 600;
+      /* 500-700 range */
+      line-height: 1.3;
+      font-family: theme('fontFamily.serif');
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
